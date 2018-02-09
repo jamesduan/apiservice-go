@@ -17,7 +17,7 @@ import (
 // 1.1.5: agent信息和命令执行结果修改为写到kafka
 
 const (
-	VERSION = "1.1.5"
+	VERSION = "0.0.1"
 )
 
 func init() {
