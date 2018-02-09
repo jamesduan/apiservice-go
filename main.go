@@ -1,7 +1,6 @@
 package main
 
 import (
-	"apiservice/db"
 	"apiservice/g"
 	"apiservice/http"
 	"apiservice/rpc"
@@ -38,9 +37,9 @@ func main() {
 	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
 	go func() {
 		<-sigs
-		fmt.Println()
-		db.DB.Close()
-		g.RedisConnPool.Close()
+		// fmt.Println()
+		// db.DB.Close()
+		// g.RedisConnPool.Close()
 		os.Exit(0)
 	}()
 

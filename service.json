@@ -1,0 +1,39 @@
+{
+    "debug": true,
+    "database": "root:1haodian@tcp(192.168.20.163:3306)/falcon_portal?loc=Local&parseTime=true",
+    "hosts": "",
+    "maxConns": 20,
+    "maxIdle": 15,
+    "listen": ":6030",
+    "trustable": [""],
+    "http": {
+        "enabled": true,
+        "listen": "0.0.0.0:6031"
+    },
+    "download": "/export/servers/download",
+    "redis": {
+	"addr": "192.168.20.163:6379",
+	"password": "123456",
+	"maxIdle": 32,
+	"execPluginList": "happy_agent_execpluginlist",
+	"pluginStatusQueue": "/queue/plugin/status",
+	"pluginCmdQueue": "/queue/plugin/cmd",
+	"pluginCmdResultQueue": "/queue/plugin/cmdresult"
+    },
+    "kafka": {
+        "enabled": true,
+        "batch": 200,
+        "connTimeout": 1000,
+        "callTimeout": 5000,
+        "maxConns": 32,
+        "maxIdle": 32,
+        "replicas": 500,
+        "topics": {
+	    "plugin_exec_state": "plugin_exec_state"
+        },
+        "cluster": {
+            "kafka-00" : "192.168.20.163:9092"
+        }
+    }
+}
+
