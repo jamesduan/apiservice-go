@@ -14,11 +14,12 @@ func configCommonRoutes() {
 	})
 
 	http.HandleFunc("/version", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte(g.VERSION))
+		RenderDataJson(w, map[string]string{"Version": g.VERSION})
+		// w.Write([]byte(g.VERSION))
 	})
 
 	http.HandleFunc("/workdir", func(w http.ResponseWriter, r *http.Request) {
-		RenderDataJson(w, file.SelfDir())
+		RenderDataJson(w, map[string]string{"Workdir": file.SelfDir()})
 	})
 
 	http.HandleFunc("/config/reload", func(w http.ResponseWriter, r *http.Request) {
@@ -26,7 +27,8 @@ func configCommonRoutes() {
 			g.ParseConfig(g.ConfigFile)
 			RenderDataJson(w, g.Config())
 		} else {
-			w.Write([]byte("no privilege"))
+			// w.Write([]byte("no privilege"))
+			RenderDataJson(w, map[string]string{"Permission": "no privilege"})
 		}
 	})
 }

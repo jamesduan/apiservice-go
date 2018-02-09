@@ -14,11 +14,16 @@ import (
 func main() {
 	cfg := flag.String("c", "cfg.json", "configuration file")
 	version := flag.Bool("v", false, "show version")
+	daemon := flag.Bool("d", false, "run in daemon mode")
 	flag.Parse()
 
 	if *version {
 		fmt.Println(g.VERSION)
 		os.Exit(0)
+	}
+
+	if *daemon {
+		fmt.Println("runing in daemon.")
 	}
 
 	g.ParseConfig(*cfg)

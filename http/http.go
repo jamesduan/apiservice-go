@@ -9,8 +9,8 @@ import (
 )
 
 type Dto struct {
-	Msg  string      `json:"msg"`
-	Data interface{} `json:"data"`
+	Msg  string      `json:"Msg"`
+	Data interface{} `json:"Data"`
 }
 
 func init() {
