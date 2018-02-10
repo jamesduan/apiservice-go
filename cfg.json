@@ -8,7 +8,7 @@
     "trustable": [""],
     "http": {
         "enabled": true,
-        "listen": "0.0.0.0:6031"
+        "listen": "0.0.0.0:8000"
     },
     "download": "/export/servers/download",
     "redis": {

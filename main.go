@@ -3,7 +3,6 @@ package main
 import (
 	"apiservice/g"
 	"apiservice/http"
-	"apiservice/rpc"
 	"flag"
 	"fmt"
 	"os"
@@ -36,7 +35,7 @@ func main() {
 	// go cache.DeleteStaleAgents()
 
 	go http.Start()
-	go rpc.Start()
+	// go rpc.Start()
 
 	sigs := make(chan os.Signal, 1)
 	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)

@@ -16,6 +16,7 @@ type Dto struct {
 func init() {
 	configCommonRoutes()
 	configProcRoutes()
+	configTestRoutes()
 }
 
 func RenderJson(w http.ResponseWriter, v interface{}) {
